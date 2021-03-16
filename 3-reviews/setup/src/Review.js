@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import people from './data';
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 
@@ -24,6 +24,16 @@ const Review = () => {
       return checkNumber(newIndex);
     });
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextPerson();
+    }, 4000);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, []);
 
   const randomPerson = () => {
     let randomNumber = Math.floor(Math.random() * people.length);
