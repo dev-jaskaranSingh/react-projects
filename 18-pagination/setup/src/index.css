@@ -6,12 +6,12 @@ Variables
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(205, 86%, 17%);
-  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-1: #1e1631;
+  --clr-primary-2: #f77f4f;
   --clr-primary-3: hsl(205, 72%, 37%);
   --clr-primary-4: hsl(205, 63%, 48%);
   /* primary/main color */
-  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-5: #231f37;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(205, 89%, 70%);
   --clr-primary-7: hsl(205, 90%, 76%);
@@ -59,9 +59,8 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: var(--clr-grey-10);
+  font-family: 'Epilogue', sans-serif;
+  background: var(--clr-primary-1);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -118,6 +117,7 @@ p {
   h3,
   h4 {
     line-height: 1;
+    color: var(--clr-primary-2);
   }
 }
 
@@ -128,7 +128,7 @@ Pagination
 */
 .section-title {
   text-align: center;
-  margin: 4rem 0 6rem 0;
+  margin: 1rem 0 0 0;
 }
 .underline {
   width: 8rem;
@@ -139,12 +139,12 @@ Pagination
 .followers {
   width: 90vw;
   max-width: var(--max-width);
-  margin: 5rem auto;
+  margin: 1rem auto;
 }
 .container {
   display: grid;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 576px) {
   .container {
@@ -152,35 +152,35 @@ Pagination
   }
 }
 .card {
-  background: var(--clr-white);
+  background: var(--clr-primary-5);
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
-  padding: 2rem 3.5rem;
+  padding: 1rem 2.5rem;
   text-align: center;
 }
 .card img {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.75rem;
 }
 
 .card h4 {
-  margin-bottom: 1.5rem;
-  font-size: 0.85rem;
-  color: var(--clr-grey-5);
+  margin-bottom: 1rem;
+  font-size: 1.25em;
+  color: var(--clr-primary-2);
 }
 
 .btn {
   padding: 0.35rem 0.75rem;
   letter-spacing: 1.6px;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--clr-white);
   background: var(--clr-primary-5);
   border-radius: var(--radius);
   border-color: transparent;
-  text-transform: uppercase;
+
   transition: var(--transition);
   cursor: pointer;
 }
@@ -193,7 +193,8 @@ Pagination
 .page-btn {
   width: 2rem;
   height: 2rem;
-  background: var(--clr-primary-7);
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-2);
   border-color: transparent;
   border-radius: 5px;
   cursor: pointer;
@@ -201,7 +202,7 @@ Pagination
   transition: var(--transition);
 }
 .active-btn {
-  background: var(--clr-primary-1);
+  background: var(--clr-primary-2);
   color: var(--clr-white);
 }
 .prev-btn,
@@ -211,6 +212,7 @@ Pagination
   font-weight: bold;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
+  color: var(--clr-primary-2);
   margin: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
