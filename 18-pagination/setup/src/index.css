@@ -82,6 +82,7 @@ h4 {
 }
 h1 {
   font-size: 2.75rem;
+  color: var(--clr-primary-2);
 }
 h2 {
   font-size: 2rem;
@@ -98,7 +99,7 @@ p {
 }
 @media screen and (min-width: 800px) {
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   h2 {
     font-size: 2.5rem;
@@ -117,7 +118,6 @@ p {
   h3,
   h4 {
     line-height: 1;
-    color: var(--clr-primary-2);
   }
 }
 
@@ -172,9 +172,24 @@ Pagination
   color: var(--clr-primary-2);
 }
 
+.section-form {
+  margin-top: 1rem;
+}
+.section-form input {
+  background: transparent;
+  border: 1px solid var(--clr-primary-2);
+  height: 2.125rem;
+  border-radius: 6px;
+  text-align: center;
+  color: var(--clr-primary-2);
+}
+
+::placeholder {
+  color: var(--clr-white);
+  letter-spacing: 1px;
+}
 .btn {
-  padding: 0.35rem 0.75rem;
-  letter-spacing: 1.6px;
+  letter-spacing: 1px;
   font-size: 1rem;
   color: var(--clr-white);
   background: var(--clr-primary-5);
@@ -183,6 +198,18 @@ Pagination
 
   transition: var(--transition);
   cursor: pointer;
+}
+
+.btn-submit {
+  background: var(--clr-primary-5);
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--clr-primary-2);
+  border: 1px solid var(--clr-primary-2);
+  margin-left: 10px;
+  letter-spacing: 1px;
+  padding: 0.5em 0.5em;
+  border-radius: 6px;
 }
 
 .btn-container {
@@ -216,6 +243,14 @@ Pagination
   margin: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.error-msg p {
+  margin-top: 0.125rem;
+  color: #7cfc00;
+}
+.error-msg .err {
+  color: red;
 }
 
 @media screen and (min-width: 775px) {

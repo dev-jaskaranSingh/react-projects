@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useFetch } from './useFetch';
 import Follower from './Follower';
+import Message from './Message';
+
 function App() {
-  const { loading, data } = useFetch();
   const [page, setPage] = useState(0);
   const [followers, setFollowers] = useState([]);
+  const [inputVal, setInputVal] = useState('');
+  const [cardsPerPage, setCardsPerPage] = useState(10);
+  const [showMessage, setShowMessage] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  const { loading, data } = useFetch(cardsPerPage);
 
   useEffect(() => {
     if (loading) return;
@@ -29,12 +36,41 @@ function App() {
       return nextPage;
     });
   };
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputVal < 1 || inputVal > 100) {
+      setShowMessage(true);
+      setIsError(true);
+      setTimeout(() => {
+        setIsError(false);
+        setShowMessage(false);
+      }, 2000);
+      return;
+    }
+    setShowMessage(true);
+    setCardsPerPage(inputVal);
+    setTimeout(() => {
+      setIsError(false);
+      setShowMessage(false);
+    }, 2000);
+  };
   return (
     <main>
       <div className="section-title">
-        <h1>{loading ? 'loading...' : 'pagination'}</h1>
+        <h1>{loading ? 'loading...' : 'Dynamic pagination'}</h1>
         <div className="underline"></div>
+        <form onSubmit={handleSubmit} className="section-form">
+          <input
+            type="number"
+            placeholder="number of cards"
+            value={inputVal}
+            onChange={(e) => setInputVal(e.target.value)}
+          />
+          <button type="submit" className="btn-submit">
+            paginate
+          </button>
+          {showMessage && <Message isError={isError} cardsPerPage={cardsPerPage} />}
+        </form>
       </div>
       <section className="followers">
         <div className="container">

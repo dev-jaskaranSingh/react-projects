@@ -1,5 +1,6 @@
-const paginate = (followers) => {
-  const itemsPerPage = 10;
+const paginate = (followers, cardsPerPage) => {
+  const itemsPerPage = +cardsPerPage;
+
   const numberOfPages = Math.ceil(followers.length / itemsPerPage);
 
   const newFollowers = Array.from({ length: numberOfPages }, (_, index) => {
